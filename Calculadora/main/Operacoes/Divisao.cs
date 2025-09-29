@@ -13,7 +13,7 @@ namespace Calculadora
             if (OperandoB == 0)
                 throw new DivideByZeroException("Divisão por zero não permitida.");
 
-            Resultado = (decimal)OperandoA / OperandoB;
+            Resultado = Math.Round((decimal)OperandoA / OperandoB, 4);
         }
     }
 }

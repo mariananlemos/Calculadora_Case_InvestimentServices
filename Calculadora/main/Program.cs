@@ -13,6 +13,8 @@ namespace Calculadora
             filaOperacoes.Enqueue(new Soma(2147483647, 2));
             filaOperacoes.Enqueue(new Divisao(18, 3));
 
+            ConsoleManager.MostrarOperacoesIniciais(filaOperacoes);
+
             Calculadora calculadora = new Calculadora();
             Stack<decimal> pilhaResultados = new Stack<decimal>();
 
@@ -21,23 +23,14 @@ namespace Calculadora
                 var operacao = filaOperacoes.Dequeue();
                 calculadora.ExecutarOperacao(operacao);
 
-                Console.WriteLine($"{operacao.OperandoA} {operacao.Operador} {operacao.OperandoB} = {operacao.Resultado}");
-
+                ConsoleManager.MostrarResultadoOperacao(operacao);
                 pilhaResultados.Push(operacao.Resultado);
 
-                Console.WriteLine("\nFila restante:");
-                foreach (var op in filaOperacoes)
-                {
-                    Console.WriteLine(op);
-                }
-                Console.WriteLine();
+                ConsoleManager.MostrarFilaRestante(filaOperacoes);
+                ConsoleManager.MostrarSeparador();
             }
 
-            Console.WriteLine("Pilha de resultados finais:");
-            foreach (var res in pilhaResultados)
-            {
-                Console.WriteLine(res);
-            }
+            ConsoleManager.MostrarResultadosFinais(pilhaResultados);
         }
     }
 }
