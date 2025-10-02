@@ -1,25 +1,46 @@
-# Calculadora
-Case para Engenharia de Software JR
+# Calculadora – Case Engenharia de Software JR
 
-Você precisa corrigir os seguintes problemas no codigo:
-  1. Aplicação só está processando o primeiro item da fila infinitamente.
-  2. Implemente a funcionalidade de divisão.
-  3. Aplicação não está calculando a penultima operação corretamente.
-     
-     	Saída esperada no console:
-     
-     		14 - 8 = 6
-     
-     		5 * 6 = 30
-     
-     		2147483647 + 2 = 2147483649
-     
-     		18 / 3 = 6
+O repositório contém a resolução do case técnico proposto para vaga Engenharia de Software Júnior.
 
-  5. Implemente uma funcionalidade para imprimir toda a lista de operaçõoes a ser processada após cada calculo realizado.
-  6. Crie uma nova pilha (Stack) para guardar o resultado de cada calculo efetuado e imprima a pilha ao final
+---
 
+## Desafio
 
-Não existe resposta certa ou errada, o objetivo do case é avaliar a linha de raciocínio de cada candidato.
-Você é livre para fazer na linguagem de sua preferência, desde que aplique as mesmas funcionalidades e tarefas deste case.
-Dica: Utilize Visual Code ou Visual Studio Community para realizar as tarefas.
+Corrigir e implementar as seguintes funcionalidades:
+
+- Aplicação só processava o **primeiro item da fila infinitamente**; 
+- Implementar a funcionalidade de **divisão**;
+- Corrigir o cálculo da **penúltima operação**;
+- Exibir a **lista de operações restantes** após cada cálculo;
+- Criar uma **pilha (Stack)** para guardar resultados e imprimir ao final.  
+
+---
+
+## Solução
+
+A solução foi desenvolvida em C# aplicando Programação Orientada a Objetos e boas práticas:
+
+- **POO e Polimorfismo** → cada operação (Soma, Subtração, Multiplicação, Divisão) foi implementada em uma classe específica que herda de `OperacaoBase`;  
+- **Responsabilidade única (SRP)** → separação entre cálculo, apresentação (ConsoleManager) e execução (Calculadora);
+- **Tratamento de exceções** → divisão por zero gera `DivideByZeroException`;
+- **Testes unitários (xUnit)** → garantem a confiabilidade das operações;
+- **Uso de Queue e Stack**: 
+
+  Queue (fila) → processa as operações na ordem em que foram inseridas;
+
+  Stack (pilha) → armazena os resultados em ordem inversa, simulando cenários de "último resultado primeiro".
+
+---
+
+## Como rodar o projeto
+```bash
+Clonar o repositório
+git clone https://github.com/mariananlemos/Calculadora_Case_InvestimentServices.git
+cd Calculadora_Case_InvestimentServices/Calculadora
+
+Executar a aplicação
+dotnet run
+
+Rodar os testes unitários
+cd Calculadora.Tests
+dotnet test
