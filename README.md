@@ -42,5 +42,5 @@ Executar a aplicação
 dotnet run
 
 Rodar os testes unitários
-cd Calculadora.Tests
+cd ../tests
 dotnet test
