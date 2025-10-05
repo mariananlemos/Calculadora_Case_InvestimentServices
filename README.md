@@ -36,7 +36,7 @@ A solução foi desenvolvida em C# aplicando Programação Orientada a Objetos e
 ```bash
 Clonar o repositório
 git clone https://github.com/mariananlemos/Calculadora_Case_InvestimentServices.git
-cd Calculadora_Case_InvestimentServices/Calculadora
+cd Calculadora_Case_InvestimentServices/Calculadora/main
 
 Executar a aplicação
 dotnet run
